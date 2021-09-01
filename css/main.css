@@ -83,9 +83,15 @@ textarea {
    Author's custom styles
    ========================================================================== */
 
+/* atributos generales */
+
 @media (max-width: 600px) {
     img {
         max-width: 100%;
+    }
+    .container {
+        width: 100%;
+        margin: 0 auto;
     }
 }
 
@@ -101,13 +107,19 @@ textarea {
     margin: 0 auto;
 }
 
+.ocultar-seccion {
+    display: none!important;
+}
+
+/*atributos de cada seccion*/
+
 .contenedor-header {
     padding-top: 5rem;
-    margin: 0 auto;
 }
 
 p, a {
     font-family: 'Assistant', sans-serif;
+    text-align: justify;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -211,8 +223,8 @@ main .contenedor-tecnologias {
         max-width: 15rem;
         display: block;
     }
-    main .contenedor-tecnologias .contenedor-imagen-main img{
-       text-align: center;
+    main .contenedor-tecnologias .contenedor-imagen-main img {
+        text-align: center;
     }
     main div .contenedor-texto-main {
         text-align: center;
@@ -236,35 +248,193 @@ main div .contenedor-imagen-main {
 
 /*barra progreso*/
 
-.conocimiento-contenedor {
+.contenedor-main {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 600) {
+    .contenedor-main {
+        min-width: 90%!important;
+        margin: 0;
+    }
+}
+
+.contenedor-tech {
+    width: 40%;
+    border-radius: 5px;
+    justify-content: space-around;
+    background-color: rgba(200, 200, 200, .3);
+    padding: 1rem;
+    margin: 2rem 0;
+}
+
+@media (max-width: 600px) {
+    .contenedor-tech {
+        width: 80%;
+    }
+}
+
+.contenedor-tech h2 {
+    text-align: center;
+    color: #335384;
+    text-transform: uppercase;
+    font-weight: bolder;
+    font-size: 3rem;
+    margin: 0;
+}
+
+.contenedor-tech div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (max-width: 600px) {
+    .imagen-tech {
+        width: 8rem;
+    }
+}
+
+.imagen-tech {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 1fr;
+    text-align: center;
+    color: #5ba7d1;
+    font-weight: bolder;
+    font-size: 1rem;
+    text-transform: uppercase;
+    max-width: 12rem!important;
+    margin: 0 1rem;
+}
+
+.imagen-tech p {
+    text-align: center;
+    margin: 0;
+}
+
+.imagen-tech img {
+    max-width: 100%;
+}
+
+/*proyectos trabajados*/
+
+.contenedor-section h2 {
+    text-align: center;
+    color: #335384;
+    font-size: 4rem;
+    font-weight: bolder;
+}
+
+.contenedor-proyectos {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.contenedor-proyectos iframe {
+    width: 20rem;
+    height: 40rem;
+    margin: 2rem;
+    padding: 1rem;
+    width: 100%;
+}
+
+/*formulario*/
+
+.articulo-formulario {
+    display: flex;
+    justify-content: center;
+    margin: 3rem 0;
+}
+
+article .contenedor-formulario {
+    border-radius: 5px;
+    padding: 5rem;
+    background-color: rgba(51, 83, 132, .8);
+}
+
+article .contenedor-formulario h1 {
+    color: white;
+    font-size: 3rem;
+    margin: 0;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.grupo-formulario {
     display: flex;
     justify-content: space-between;
-    width: 90%;
+    align-items: center;
+    font-family: 'Assistant', sans-serif;
+    margin-bottom: .5rem;
 }
 
-.conocimiento-contenedor p {
-    color: #335384;
-    font-size: 1rem;
+.grupo-formulario input {
+    color:white;
+    list-style: none;
+    border: none;
+    font-family: 'Assistant', sans-serif;
+    text-align: justify;
+    padding: .8rem 2rem;
+    width: 100%;
+    background: rgba(51, 83, 132, .8);
+}
+.grupo-formulario input::placeholder {
+    color:white;
+}
+
+.grupo-formulario-textarea {
+    font-family: 'Assistant', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.grupo-formulario-textarea textarea {
+    background: rgba(51, 83, 132, .8);
+    display: block;
+    min-height: 4rem;
+    max-height: 6rem;
+    font-family: 'Assistant', sans-serif;
+    text-align: justify;
+    border: none;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    color: white;
+}
+.grupo-formulario-textarea textarea::placeholder {
+    color: white;
+}
+
+.grupo-btn {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.grupo-btn .btn-enviar {
+    background-color: #335384;
+    text-align: center;
+    color: white;
     font-weight: bold;
+    font-size: 1rem;
+    margin: 1rem 0rem;
 }
 
-#conocimiento-tecnologia {
-    /* Elimino la apariencia por defecto */
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 90%;
-    background: #000;
-}
+/*footer*/
 
-#conocimiento-tecnologia::-webkit-progress-value {
-    background: #335384;
-}
-
-#conocimiento-tecnologia::-webkit-progress-bar {
-    background-color: #D8D8D8;
-    opacity: 0.8;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25) inset;
+.container-footer {
+    color: white;
+    font-family: 'Assistant', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: rgba(51, 83, 132, .8);
 }
 
 /* ==========================================================================
